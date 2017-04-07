@@ -1,0 +1,20 @@
+!!!
+%html
+%head
+  %title Forum App
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+  %link{ rel: "stylesheet", type: "text/css", "href"=> "https://fonts.googleapis.com/css?family=Lato:300,400,700" }
+  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  = csrf_meta_tags
+%body
+  %header.main_header
+    #logo
+      %p Mackenzie's Rails Forum
+    #buttons
+      = link_to "New Post", new_post_path
+  .wrapper
+    %p.notice= notice
+    %p.alert= alert
+
+  .wrapper
+    = yield
